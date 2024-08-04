@@ -3,9 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/ethclient"
 	"log"
 	"math/big"
 	"os"
@@ -15,6 +12,10 @@ import (
 	"rollup-offchain/zk"
 	"strconv"
 	"strings"
+
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/ethclient"
 )
 
 func BCPTest() {
@@ -144,51 +145,4 @@ func BCPTest() {
 		break
 
 	}
-}
-
-// challengeBegin 创建一个挑战，然后等待质疑
-func challengeBegin(client *ethclient.Client, auth *bind.TransactOpts, caller *bind.CallOpts, ctx context.Context, index string) error {
-	fmt.Println("challengeBegin Func")
-
-	target, _ := client.BlockNumber(ctx)
-	err := challenger.ChallengeCreate(client, auth, index, big.NewInt(int64(target)))
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// questionBegin
-func questionBegin(client *ethclient.Client, auth *bind.TransactOpts, caller *bind.CallOpts, ctx context.Context, index string) error {
-	fmt.Println("questionBegin Func")
-
-	err := challenger.QuestionCreate(client, auth, ctx, index)
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// questionBegin
-func userTmp(client *ethclient.Client, auth *bind.TransactOpts, caller *bind.CallOpts, ctx context.Context, index string) error {
-	fmt.Println("userTmp Func")
-
-	res, err := challenger.CMInstance.ChallengePool(caller, index)
-	if err != nil {
-		return err
-	}
-
-	var record challenger.ChallengeRecord
-	record = res
-
-	fmt.Println("Index", record.Index)
-	fmt.Println("State", record.State.Int64())
-	fmt.Println("Begin", record.Begin.Int64())
-	fmt.Println("End", record.End.Int64())
-	fmt.Println("Challenger", record.Challenger)
-	fmt.Println("Questioner", record.Questioner)
-
-	return nil
 }

@@ -5,9 +5,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/ethclient"
 	"io"
 	"log"
 	"math/big"
@@ -17,11 +14,17 @@ import (
 	"rollup-offchain/model"
 	"rollup-offchain/trie"
 	"strings"
+
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/ethclient"
 )
 
 var TestTxNum = 5
 
-//var myPassword = "123456789"
+// use your own password
+var myPassword = "123456789"
+
 //
 //var DataTypesAddr = " 0x1C4632eA7A9942cF70FAbBd6fD5346eCC6Ef44F2"
 //var MerkleUtilsAddr = " 0x22B472414887C98634240e38dE86a19aA07f0887"
@@ -31,17 +34,11 @@ var TestTxNum = 5
 //var CrossRollupAddr = " 0xa73A3C322c4C81909D331a6d9e8733d95a5EFd4b"
 //
 //var MyStateRoot = "stateRoot"
-//
-//var OnChain *log.Logger
-//var OffChain *log.Logger
-//var OnChainLogPath = "./OnChainInfo-bak.txt"
-//var OffChainLogPath = "./OffChainInfo-bak.txt"
-//var TxLogPath = "./TxLogInfo.txt"
 
 func CommiteTestMain() {
-	//// 初始化客户端
+	//// 初始化客户端(use your own IP address)
 	fmt.Println("***** Client Init *****")
-	client, err := ethclient.Dial("ws://172.18.166.229:8546")
+	client, err := ethclient.Dial("ws://xxx.xx.xxx.xxx:8545")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -56,7 +53,7 @@ func CommiteTestMain() {
 	fmt.Println("ChainID = ", chainID.Int64())
 
 	// 读取密钥文件
-	file := "./data/UTC-USER2"
+	file := "../data/UTC-USER2"
 	jsonBytes, err := os.ReadFile(file)
 	if err != nil {
 		log.Fatal(err)
