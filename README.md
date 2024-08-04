@@ -70,7 +70,7 @@ To execute a cross-chain transaction, you first need to deploy the FullRollup co
 
 1. **Configure Parameters:**
 
-    Edit the parameters in the `example/test.go` file to match your deployment setup.
+    Edit the parameters in the `Rollup-Offchain/example/test.go` file to match your deployment setup.
 
 2. **Run the Example Test:**
 
