@@ -66,7 +66,7 @@ To execute a cross-chain transaction, you first need to deploy the FullRollup co
     abigen --sol=path/to/FullRollup.sol --pkg=yourpackage --out=fullrollup.go
     ```
 
-### Run Tests
+### Example
 
 1. **Configure Parameters:**
 
