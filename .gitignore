@@ -1,0 +1,57 @@
+# OS / editors
+.DS_Store
+.idea/
+
+# Local Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Local toolchains and generated binaries
+.local-bin/
+Rollup-Offchain/localnetattackperf
+Rollup-Offchain/localnetbench
+Rollup-Offchain/localnetexp
+*.exe
+
+# Build / generated artifacts
+DataBase*
+groth16*
+artifacts/
+local-devnet/results/
+local-devnet/multinode-geth/chain-a/
+local-devnet/multinode-geth/chain-b/
+local-devnet/multinode-geth/docker-compose.yml
+local-devnet/multinode-geth/local-pids.json
+local-devnet/multinode-geth/network-summary.json
+local-devnet/multinode-geth/deployments/
+local-devnet/multinode-geth/deployments/latest.json
+local-devnet/multinode-geth/runtime/
+
+# Personal review / paper files
+TDSC_GenkiDama_大修.pdf
+审稿意见.docx
+第二轮大修需求.md
+UTC-eth-key
+cmd.txt
+ddos.py
+ethTest.go
+mosTest.go
+sybil.py
+throughput.py
+goproject-main/
+flyclientDemo/
+zkProof/
+
+# Logs and temporary outputs
+*.log
+EventWatcher/*-log*.txt
+EventWatcher/main/*.txt
+EventWatcher/main/*.exe
+EventWatcher/data/
+EventWatcher/main/data/
+MosWatcher/*-log*.txt
+MosWatcher/main/*.txt
+MosWatcher/main/*.exe
+MosWatcher/data/
+MosWatcher/main/data/

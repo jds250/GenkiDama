@@ -1,0 +1,10 @@
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: AddCheckPoint 191971 557
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: ChallengeCreate 615424 573
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: AddCheckPoint 205935 617
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: ChallengeCreate 615412 619
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: QuestionCreate 126577 621
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: ChallengeResponse 210151 622
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: QuestionArgu 124821 623
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: ChallengeResponse 111268 624
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: QuestionArgu 113631 625
+TxCostLog: 2024/01/09 13:12:28 cost.go:84: ChallengeFinalProof 335214 627
